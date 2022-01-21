@@ -6,7 +6,8 @@ const back = document.querySelectorAll(".back");
 const input0804 = document.querySelector(".input0804");
 const pf0804 = document.querySelector(".pf0804");
 const send = document.querySelector(".send");
-const pop__main = document.querySelector('.pop__main0804');
+const pop__main0804 = document.querySelector('.pop__main0804');
+const pop__main0801 = document.querySelector('.pop__main0801');
 const pop__body = document.querySelector('.pop__body');
 
 
@@ -22,7 +23,7 @@ pf0804.addEventListener("click", () => {
 send.addEventListener('click',()=>{
   const myMessege = input0804.value
   console.log(myMessege);
-  pop__main.insertAdjacentHTML('beforeend',` <div class="pop__body">
+  pop__main0801.insertAdjacentHTML('beforeend',` <div class="pop__body">
               <h1 class="pop__date">- ${date}/${month+1}/${year} -</h1>
               <div class="pop__block">
                 <div class="pop__avatar">
@@ -40,6 +41,28 @@ send.addEventListener('click',()=>{
   // const myMessege = input0804.value
   // console.log(myMessege);
 })
+
+send.addEventListener('click',()=>{
+  const myMessege = input0804.value
+  console.log(myMessege);
+  pop__main0804.insertAdjacentHTML('beforeend',` <div class="pop__body">
+              <h1 class="pop__date">- ${date}/${month+1}/${year} -</h1>
+              <div class="pop__block">
+                <div class="pop__avatar">
+                  <img src="./img/contact.png" alt="" />
+                </div>
+                <div class="pop__info">
+                  <p>
+                  Gecirim 50,00 manat bellenen belga ${myMessege} nobata goyulan
+                  </p>
+                </div>
+              </div>
+              <p class="time">${hour+1}:${min}</p>
+            </div>`)
+  // const myMessege = input0804.value
+  // console.log(myMessege);
+})
+
 
 input0804.addEventListener("onchange", () => {
   send.style.opacity = "1";
