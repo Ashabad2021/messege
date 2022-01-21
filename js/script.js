@@ -6,6 +6,12 @@ const back = document.querySelectorAll(".back");
 const input0804 = document.querySelector(".input0804");
 const pf0804 = document.querySelector(".pf0804");
 const send = document.querySelector(".send");
+const pop__main = document.querySelector('.pop__main0804');
+const pop__body = document.querySelector('.pop__body');
+
+
+
+
 
 pf0804.addEventListener("click", () => {
   pf0804.style.height = "100px";
@@ -13,9 +19,30 @@ pf0804.addEventListener("click", () => {
   send.style.display = "block";
 });
 
+send.addEventListener('click',()=>{
+  const myMessege = input0804.value
+  console.log(myMessege);
+  pop__main.insertAdjacentHTML('beforeend',` <div class="pop__body">
+              <h1 class="pop__date">- ${date}/${month+1}/${year} -</h1>
+              <div class="pop__block">
+                <div class="pop__avatar">
+                  <img src="./img/contact.png" alt="" />
+                </div>
+                <div class="pop__info">
+                  <p>
+                    ${date}/${month+1}/${year} ${hour+1}:${min}:${sec} ${myMessege} gecirelen 50.00 manat
+                    Saklanan 0.10 manat
+                  </p>
+                </div>
+              </div>
+              <p class="time">${hour+1}:${min}</p>
+            </div>`)
+  // const myMessege = input0804.value
+  // console.log(myMessege);
+})
+
 input0804.addEventListener("onchange", () => {
   send.style.opacity = "1";
-  console.log(input0804.value);
 });
 
 m0801.addEventListener("click", () => {
@@ -41,3 +68,19 @@ const hour = time.getHours();
 const min = time.getMinutes();
 const sec = time.getMinutes();
 console.log(year, month + 1, date, hour, min, sec);
+
+function JSClock() {
+  var time = new Date();
+  var hour = time.getHours();
+  var minute = time.getMinutes();
+  var second = time.getSeconds();
+  var temp = "" + (hour > 12 ? hour - 12 : hour);
+  if (hour == 0) temp = "12";
+  temp += (minute < 10 ? ":0" : ":") + minute;
+  temp += (second < 10 ? ":0" : ":") + second;
+  temp += hour >= 12 ? " P.M." : " A.M.";
+  return temp;
+}
+
+// const myTime = JSClock()
+// console.log(myTime);
