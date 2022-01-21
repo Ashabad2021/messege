@@ -31,10 +31,7 @@
     margin-bottom: 10px;
     padding-bottom: 10px;
   }
-  .message__img {
-  }
-  .message__info {
-  }
+  
   .message__contact {
     margin-bottom: 3px;
   }
@@ -123,7 +120,7 @@
   }
   .enter__message::placeholder {
     color: rgb(111, 111, 126);
-    font-size: 1em;
+    font-size: 0.8em;
   }
 
   .div__skrepka {

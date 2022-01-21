@@ -11,16 +11,13 @@ const pop__main0801 = document.querySelector('.pop__main0801');
 const pop__body = document.querySelector('.pop__body');
 
 
-
-
-
 pf0804.addEventListener("click", () => {
   pf0804.style.height = "100px";
   input0804.style.height = "90px";
   send.style.display = "block";
 });
 
-send.addEventListener('click',()=>{
+function create0801 () {
   const myMessege = input0804.value
   console.log(myMessege);
   pop__main0801.insertAdjacentHTML('beforeend',` <div class="pop__body">
@@ -38,11 +35,9 @@ send.addEventListener('click',()=>{
               </div>
               <p class="time">${hour+1}:${min}</p>
             </div>`)
-  // const myMessege = input0804.value
-  // console.log(myMessege);
-})
+}
 
-send.addEventListener('click',()=>{
+function create0804 () {
   const myMessege = input0804.value
   console.log(myMessege);
   pop__main0804.insertAdjacentHTML('beforeend',` <div class="pop__body">
@@ -59,9 +54,15 @@ send.addEventListener('click',()=>{
               </div>
               <p class="time">${hour+1}:${min}</p>
             </div>`)
-  // const myMessege = input0804.value
-  // console.log(myMessege);
-})
+}
+
+
+
+send.addEventListener('click',create0801)
+
+send.addEventListener('click',create0804)
+
+
 
 
 input0804.addEventListener("onchange", () => {
